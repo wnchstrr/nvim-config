@@ -21,16 +21,22 @@ return {
   },
 
   -- Линии отступов
-  {
+{
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     config = function()
       require("ibl").setup({
-        indent = {
-          char = "│",
-        },
-        scope = {
-          enabled = true,
+        indent = { char = "│" },
+        scope = { enabled = true },
+        exclude = {
+          filetypes = {
+            "dashboard",
+            "lazy",
+            "mason",
+            "neo-tree",
+            "Telescope",
+            "help",
+          },
         },
       })
     end,
