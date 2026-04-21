@@ -1,6 +1,7 @@
 return {
   { "nvim-tree/nvim-web-devicons", lazy = true },
 
+  -- Файловый менеджер
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -16,6 +17,7 @@ return {
     end,
   },
 
+  -- Fuzzy поиск
   {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
@@ -54,6 +56,7 @@ return {
     end,
   },
 
+  -- Подсветка синтаксиса
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -67,17 +70,19 @@ return {
     end,
   },
 
+  -- Обёртка в кавычки и скобки
   {
     "kylechui/nvim-surround",
     config = function()
       require("nvim-surround").setup()
     end,
   },
-}
 
+  -- Комментирование
   {
     "numToStr/Comment.nvim",
     config = function()
       require("Comment").setup()
     end,
   },
+}
