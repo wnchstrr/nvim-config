@@ -6,8 +6,10 @@
 ![Lua](https://img.shields.io/badge/Lua-5.1-000080?style=flat-square&logo=lua&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-Ubuntu_24.04-E95420?style=flat-square&logo=ubuntu&logoColor=white)
 
-![dashboard](.github/images/dashboard.png)
-
+<p align="center">
+  <img src=".github/images/dashboard.png" width="49%" />
+  <img src=".github/images/code.png" width="49%" />
+</p>
 ---
 
 ## Структура
