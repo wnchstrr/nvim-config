@@ -77,12 +77,4 @@ return {
       require("nvim-surround").setup()
     end,
   },
-
-  -- Комментирование
-  {
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup()
-    end,
-  },
 }
