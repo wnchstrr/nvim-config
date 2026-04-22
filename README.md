@@ -25,7 +25,7 @@
     │   └── lazy.lua       менеджер плагинов
     └── plugins/
         ├── ui.lua         тема, lualine, bufferline, dashboard
-        ├── editor.lua     neo-tree, telescope, treesitter, surround, comment
+        ├── editor.lua     neo-tree, telescope, treesitter, surround
         ├── lsp.lua        mason, pyright, nvim-cmp
         └── tools.lua      gitsigns, which-key, toggleterm, conform
 ```
@@ -45,7 +45,6 @@
 | `telescope`         | Fuzzy поиск по файлам и тексту           |
 | `nvim-treesitter`   | Подсветка синтаксиса                     |
 | `nvim-surround`     | Обёртка в кавычки, скобки                |
-| `Comment.nvim`      | Комментирование строк и блоков           |
 | `mason`             | Менеджер LSP серверов                    |
 | `nvim-lspconfig`    | Подключение LSP                          |
 | `nvim-cmp`          | Автодополнение                           |
