@@ -1,4 +1,5 @@
 return {
+  -- Менеджер LSP серверов
   {
     "williamboman/mason.nvim",
     config = function()
@@ -6,6 +7,7 @@ return {
     end,
   },
 
+  -- Связывает mason и встроенный LSP
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
@@ -17,40 +19,7 @@ return {
     end,
   },
 
-  -- Настройка LSP через новый встроенный API nvim 0.11+
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = { "williamboman/mason-lspconfig.nvim" },
-    config = function()
-      -- Горячие клавиши при подключении LSP
-      vim.api.nvim_create_autocmd("LspAttach", {
-        callback = function(args)
-          local map = vim.keymap.set
-          local opts = { buffer = args.buf }
-
-          map("n", "gd", vim.lsp.buf.definition, opts)
-          map("n", "K",  vim.lsp.buf.hover, opts)
-          map("n", "gr", vim.lsp.buf.references, opts)
-          map("n", "<leader>rn", vim.lsp.buf.rename, opts)
-          map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-          map("n", "<leader>d", vim.diagnostic.open_float, opts)
-        end,
-      })
-
-      -- Новый API для настройки LSP
-      vim.lsp.config("pyright", {
-        settings = {
-          python = {
-            analysis = {
-              typeCheckingMode = "basic",
-            },
-          },
-        },
-      })
-      vim.lsp.enable("pyright")
-    end,
-  },
-
+  -- Автодополнение
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -63,7 +32,6 @@ return {
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
-
       cmp.setup({
         snippet = {
           expand = function(args)

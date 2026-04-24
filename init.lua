@@ -1,6 +1,7 @@
 require("config.options")
 require("config.keymaps")
 require("config.lazy")
+require("config.lsp")
 
 -- Автосохранение при потере фокуса
 vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
