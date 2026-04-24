@@ -22,6 +22,7 @@
     ├── config/
     │   ├── options.lua    настройки редактора
     │   ├── keymaps.lua    горячие клавиши 
+    │   ├── lsp.lua        настройка LSP и keymaps
     │   └── lazy.lua       менеджер плагинов
     └── plugins/
         ├── ui.lua         тема, lualine, bufferline, dashboard
@@ -34,26 +35,26 @@
 
 ## Плагины
 
-| Плагин              | Назначение                               |
-|---------------------|------------------------------------------|
-| `lazy.nvim`         | Менеджер плагинов с ленивой загрузкой    |
-| `everforest`        | Тема                                     |
-| `lualine`           | Строка статуса                           |
-| `bufferline`        | Вкладки файлов сверху                    |
-| `dashboard-nvim`    | Стартовый экран                          |
-| `neo-tree`          | Файловый менеджер                        |
-| `telescope`         | Fuzzy поиск по файлам и тексту           |
-| `nvim-treesitter`   | Подсветка синтаксиса                     |
-| `nvim-surround`     | Обёртка в кавычки, скобки                |
-| `mason`             | Менеджер LSP серверов                    |
-| `nvim-lspconfig`    | Подключение LSP                          |
-| `nvim-cmp`          | Автодополнение                           |
-| `pyright`           | LSP для Python                           |
-| `gitsigns`          | Git изменения в строках                  |
-| `indent-blankline`  | Линии отступов                           |
-| `which-key`         | Подсказки клавиш                         |
-| `toggleterm`        | Встроенный терминал                      |
-| `conform` + `ruff`  | Форматтер Python при сохранении          |
+| Плагин                    | Назначение                            |
+|---------------------------|---------------------------------------|
+| `lazy.nvim`               | Менеджер плагинов с ленивой загрузкой |
+| `everforest`              | Тема                                  |
+| `lualine`                 | Строка статуса                        |
+| `bufferline`              | Вкладки файлов сверху                 |
+| `dashboard-nvim`          | Стартовый экран                       |
+| `neo-tree`                | Файловый менеджер                     |
+| `telescope`               | Fuzzy поиск по файлам и тексту        |
+| `nvim-treesitter`         | Подсветка синтаксиса                  |
+| `nvim-surround`           | Обёртка в кавычки, скобки             |
+| `mason`                   | Менеджер LSP серверов                 |
+| `vim.lsp.config/enable`   | Встроенный LSP API (nvim 0.11+)       |
+| `nvim-cmp`                | Автодополнение                        |
+| `pyright`                 | LSP для Python                        |
+| `gitsigns`                | Git изменения в строках               |
+| `indent-blankline`        | Линии отступов                        |
+| `which-key`               | Подсказки клавиш                      |
+| `toggleterm`              | Встроенный терминал                   |
+| `conform` + `ruff`        | Форматтер Python при сохранении       |
 
 ---
 
