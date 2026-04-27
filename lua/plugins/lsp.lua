@@ -1,5 +1,4 @@
 return {
-  -- Менеджер LSP серверов
   {
     "williamboman/mason.nvim",
     config = function()
@@ -7,7 +6,6 @@ return {
     end,
   },
 
-  -- Связывает mason и встроенный LSP
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
@@ -19,7 +17,23 @@ return {
     end,
   },
 
-  -- Автодополнение
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = { "williamboman/mason-lspconfig.nvim" },
+    config = function()
+      vim.lsp.config("pyright", {
+        settings = {
+          python = {
+            analysis = {
+              typeCheckingMode = "basic",
+            },
+          },
+        },
+      })
+      vim.lsp.enable("pyright")
+    end,
+  },
+
   {
     "hrsh7th/nvim-cmp",
     dependencies = {

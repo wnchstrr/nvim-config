@@ -28,5 +28,3 @@ map("i", "<C-c>", "<Esc>", { desc = "Exit insert mode" })
 -- Сохранить и запустить Python
 map("n", "<leader>r", ":w<CR>:!python3 %<CR>", { desc = "Run Python file" })
 
--- Запуск Python с полным путём
-vim.keymap.set("n", "<leader>r", ":w<CR>:!/usr/bin/python3 %<CR>", { desc = "Run Python file" })

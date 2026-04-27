@@ -11,15 +11,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("n", "<leader>d", vim.diagnostic.open_float, opts)
   end,
 })
-
--- Настройка pyright через встроенный API
-vim.lsp.config("pyright", {
-  settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = "basic",
-      },
-    },
-  },
-})
-vim.lsp.enable("pyright")

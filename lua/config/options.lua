@@ -39,3 +39,16 @@ vim.diagnostic.config({
   virtual_text = true,
   float = { border = "rounded" },
 })
+
+-- Убрать текст ошибок справа и подчёркивания, иконки оставить
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  underline = true,
+})
+
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  underline = false,
+})
