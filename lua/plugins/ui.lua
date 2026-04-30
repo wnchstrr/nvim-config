@@ -1,24 +1,11 @@
 return {
-  -- Тема
-  {
-    "sainnhe/everforest",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.g.everforest_background = "hard"
-      vim.g.everforest_enable_italic = false
-      vim.g.everforest_better_performance = 1
-      vim.cmd.colorscheme("everforest")
-    end,
-  },
-
   -- Строка статуса внизу
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("lualine").setup({
-        options = { theme = "everforest" },
+        options = { theme = "gruvbox" },
       })
     end,
   },
