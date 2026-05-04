@@ -5,17 +5,16 @@ return {
     lazy = true,
   },
   {
-    "folke/tokyonight.nvim",
+    "ellisonleao/gruvbox.nvim",
     lazy = true,
   },
   -- Активная
-{
-  "ellisonleao/gruvbox.nvim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    vim.o.background = "dark"
-    vim.cmd("colorscheme gruvbox")
-  end,
- },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd("colorscheme tokyonight")
+    end,
+  },
 }

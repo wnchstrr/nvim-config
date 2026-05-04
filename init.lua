@@ -20,4 +20,4 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 })
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "#1e2030" })
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme tokyonight")

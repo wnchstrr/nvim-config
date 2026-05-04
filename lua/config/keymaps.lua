@@ -8,10 +8,6 @@ map("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Find files" })
 map("n", "<leader>fg", ":Telescope live_grep<CR>",  { desc = "Search in files" })
 map("n", "<leader>fb", ":Telescope buffers<CR>",    { desc = "Find buffers" })
 
-map("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
-map("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
-map("n", "<C-j>", "<C-w>j", { desc = "Move to bottom split" })
-map("n", "<C-k>", "<C-w>k", { desc = "Move to top split" })
 
 map("n", "<leader>bn", ":bnext<CR>",  { desc = "Next buffer" })
 map("n", "<leader>bp", ":bprev<CR>",  { desc = "Prev buffer" })
@@ -28,3 +24,9 @@ map("i", "<C-c>", "<Esc>", { desc = "Exit insert mode" })
 -- Сохранить и запустить Python
 map("n", "<leader>r", ":w<CR>:!python3 %<CR>", { desc = "Run Python file" })
 
+
+-- Навигация между сплитами
+map("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
+map("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
+map("n", "<C-j>", "<C-w>j", { desc = "Move to bottom split" })
+map("n", "<C-k>", "<C-w>k", { desc = "Move to top split" })
