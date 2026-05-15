@@ -4,13 +4,7 @@
 
 ![Neovim](https://img.shields.io/badge/Neovim-0.12+-57A143?style=flat-square&logo=neovim&logoColor=white)
 ![Lua](https://img.shields.io/badge/Lua-5.1-000080?style=flat-square&logo=lua&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-Ubuntu_24.04-E95420?style=flat-square&logo=ubuntu&logoColor=white)
-
-<p align="center">
-  <img src=".github/images/dashboard.png" width="49%" />
-  <img src=".github/images/code.png" width="49%" />
-</p>
-
+![Ubuntu](https://img.shields.io/badge/Ubuntu_26.04-E95420?style=flat-square&logo=ubuntu&logoColor=white)
 ---
 
 ## Структура
@@ -20,125 +14,47 @@
 ├── init.lua
 └── lua/
     ├── config/
-    │   ├── options.lua    настройки редактора
-    │   ├── keymaps.lua    горячие клавиши 
-    │   ├── lsp.lua        настройка LSP и keymaps
-    │   └── lazy.lua       менеджер плагинов
+    │   ├── options.lua       настройки редактора
+    │   ├── keymaps.lua       горячие клавиши
+    │   ├── lsp.lua           настройка LSP и keymaps
+    │   └── lazy.lua          менеджер плагинов
     └── plugins/
-        ├── ui.lua         тема, lualine, bufferline, dashboard
-        ├── editor.lua     neo-tree, telescope, treesitter, surround
-        ├── lsp.lua        mason, pyright, nvim-cmp
-        └── tools.lua      gitsigns, which-key, toggleterm, conform
+        ├── ui.lua            lualine, bufferline, dashboard
+        ├── colorscheme.lua   тема (Tokyo Night)
+        ├── editor.lua        neo-tree, telescope, treesitter, surround
+        ├── lsp.lua           mason, pyright, nvim-cmp
+        └── tools.lua         gitsigns, which-key, toggleterm, conform
+
 ```
 
 ---
 
 ## Плагины
 
-| Плагин                    | Назначение                            |
-|---------------------------|---------------------------------------|
-| `lazy.nvim`               | Менеджер плагинов с ленивой загрузкой |
-| `everforest`              | Тема                                  |
-| `lualine`                 | Строка статуса                        |
-| `bufferline`              | Вкладки файлов сверху                 |
-| `dashboard-nvim`          | Стартовый экран                       |
-| `neo-tree`                | Файловый менеджер                     |
-| `telescope`               | Fuzzy поиск по файлам и тексту        |
-| `nvim-treesitter`         | Подсветка синтаксиса                  |
-| `nvim-surround`           | Обёртка в кавычки, скобки             |
-| `mason`                   | Менеджер LSP серверов                 |
-| `vim.lsp.config/enable`   | Встроенный LSP API (nvim 0.11+)       |
-| `nvim-cmp`                | Автодополнение                        |
-| `pyright`                 | LSP для Python                        |
-| `gitsigns`                | Git изменения в строках               |
-| `indent-blankline`        | Линии отступов                        |
-| `which-key`               | Подсказки клавиш                      |
-| `toggleterm`              | Встроенный терминал                   |
-| `conform` + `ruff`        | Форматтер Python при сохранении       |
-
----
-
-## Keymaps
-
-Leader клавиша — `Space`.
-
-### Файлы и буферы
-
-| Клавиша      | Действие                   |
-|--------------|----------------------------|
-| `Space+e`    | Файловый менеджер          |
-| `Space+ff`   | Поиск файлов               |
-| `Space+fg`   | Поиск текста в файлах      |
-| `Space+fb`   | Поиск по буферам           |
-| `Space+s`    | Сохранить                  |
-| `Space+q`    | Закрыть                    |
-| `Space+bd`   | Закрыть буфер              |
-| `Space+r`    | Запустить Python файл      |
-| `Tab`        | Следующий буфер            |
-| `Shift+Tab`  | Предыдущий буфер           |
-
-### LSP
-
-| Клавиша      | Действие                   |
-|--------------|----------------------------|
-| `gd`         | Перейти к определению      |
-| `K`          | Документация               |
-| `gr`         | Все использования          |
-| `Space+rn`   | Переименовать              |
-| `Space+ca`   | Быстрые действия           |
-| `Space+d`    | Показать ошибку            |
-
-### Git
-
-| Клавиша      | Действие                   |
-|--------------|----------------------------|
-| `Space+gp`   | Предпросмотр изменений     |
-| `Space+gb`   | Git blame строки           |
-| `Space+gr`   | Сбросить изменения         |
-
-### Сплиты
-
-| Клавиша        | Действие                    |
-|----------------|-----------------------------|
-| `Ctrl+h/l/j/k` | Переключение между сплитами |
-| `:vsp файл`    | Вертикальный сплит          |
-| `:sp файл`     | Горизонтальный сплит        |
-| `Ctrl+w q`     | Закрыть текущий сплит       |
-
-### Комментирование
-
-| Клавиша | Действие                          |
-|---------|-----------------------------------|
-| `gcc`   | Закомментировать строку           |
-| `gc`    | Закомментировать выделение        |
-
-### Visual mode
-
-| Клавиша | Действие                          |
-|---------|-----------------------------------|
-| `v`     | Посимвольное выделение            |
-| `V`     | Построчное выделение              |
-| `Ctrl+v`| Блочное выделение                 |
-| `>`     | Увеличить отступ                  |
-| `<`     | Уменьшить отступ                  |
-| `S"`    | Обернуть выделение в кавычки      |
-| `S(`    | Обернуть выделение в скобки       |
-| `S[`    | Обернуть выделение в [ ]          |
-
-### Терминал
-
-| Клавиша   | Действие                   |
-|-----------|----------------------------|
-| `Ctrl+\`  | Открыть/закрыть терминал   |
-
-### Insert mode
-
-| Клавиша   | Действие                   |
-|-----------|----------------------------|
-| `jj`      | Выход в Normal mode        |
-| `Ctrl+c`  | Выход в Normal mode        |
-
----
+| Плагин | Назначение |
+|---|---|
+| `lazy.nvim` | Менеджер плагинов с ленивой загрузкой |
+| `tokyonight` | Тема |
+| `lualine` | Строка статуса |
+| `bufferline` | Вкладки файлов сверху |
+| `dashboard-nvim` | Стартовый экран |
+| `neo-tree` | Файловый менеджер |
+| `telescope` | Fuzzy поиск по файлам и тексту |
+| `nvim-treesitter` | Подсветка синтаксиса |
+| `nvim-surround` | Обёртка в кавычки, скобки |
+| `nvim-autopairs` | Автозакрытие скобок и кавычек |
+| `mason` | Менеджер LSP серверов |
+| `nvim-lspconfig` | LSP API |
+| `nvim-cmp` | Автодополнение |
+| `pyright` | LSP для Python |
+| `gitsigns` | Git изменения в строках |
+| `indent-blankline` | Линии отступов |
+| `which-key` | Подсказки клавиш |
+| `toggleterm` | Встроенный терминал |
+| `conform` + `ruff` | Форматтер Python при сохранении |
+| `todo-comments` | Подсветка TODO/FIXME/NOTE |
+| `vim-illuminate` | Подсветка вхождений слова под курсором |
+| `smear-cursor` | Анимация курсора |
 
 ## Установка
 
@@ -160,11 +76,11 @@ git clone git@github.com:wnchstrr/nvim-config.git ~/.config/nvim
 
 ## Окружение
 
-- **ОС:** Ubuntu 24.04
+- **ОС:** Ubuntu 26.04 LTS
 - **Терминал:** Kitty
-- **Шрифт:** Fantasque Sans Mono Nerd Font
+- **Шрифт:** JetBrains Mono Nerd Font
 - **Shell:** zsh
-- **Тема:** Everforest Dark Hard
+- **Тема:** Tokio Night
 
 ---
 
