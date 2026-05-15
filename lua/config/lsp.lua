@@ -1,4 +1,5 @@
 -- Горячие клавиши при подключении LSP
+vim.lsp.enable("emmet_ls")
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local map = vim.keymap.set

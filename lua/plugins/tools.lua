@@ -80,4 +80,23 @@ return {
       })
     end,
   },
+
+-- Автозакрытие скобок и кавычек
+
+{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
+
+-- Подсветка TODO/FIXME/NOTE
+{
+  "folke/todo-comments.nvim",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  config = true,
+},
+
+-- Подсветка вхождений слова под курсором
+{
+  "RRethy/vim-illuminate",
+  config = function()
+    require("illuminate").configure()
+  end,
+},
 }
