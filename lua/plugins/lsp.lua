@@ -5,7 +5,6 @@ return {
       require("mason").setup()
     end,
   },
-
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
@@ -16,11 +15,11 @@ return {
       })
     end,
   },
-
   {
     "neovim/nvim-lspconfig",
     dependencies = { "williamboman/mason-lspconfig.nvim" },
     config = function()
+      -- pyright
       vim.lsp.config("pyright", {
         settings = {
           python = {
@@ -31,9 +30,13 @@ return {
         },
       })
       vim.lsp.enable("pyright")
+      -- emmet
+      vim.lsp.config("emmet_ls", {
+        filetypes = { "html", "css", "htmldjango" },
+      })
+      vim.lsp.enable("emmet_ls")
     end,
   },
-
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -58,6 +61,15 @@ return {
           ["<CR>"]      = cmp.mapping.confirm({ select = true }),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"]     = cmp.mapping.abort(),
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump()
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
