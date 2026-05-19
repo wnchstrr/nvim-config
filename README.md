@@ -55,6 +55,7 @@
 | `todo-comments` | Подсветка TODO/FIXME/NOTE |
 | `vim-illuminate` | Подсветка вхождений слова под курсором |
 | `smear-cursor` | Анимация курсора |
+| `emmet-ls` | Emmet-аббревиатуры для HTML/CSS |
 
 ## Установка
 
