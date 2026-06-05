@@ -10,11 +10,12 @@ return {
   },
   -- Активная
   {
-    "folke/tokyonight.nvim",
+    "olivercederborg/poimandres.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd("colorscheme tokyonight")
+      require("poimandres").setup({})
+      vim.cmd("colorscheme poimandres")
     end,
   },
 }

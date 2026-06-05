@@ -1,4 +1,5 @@
 require("config.options")
+require("config.options")
 require("config.keymaps")
 require("config.lazy")
 require("config.lsp")
@@ -19,5 +20,23 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
   end,
 })
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "#1e2030" })
-vim.cmd("colorscheme tokyonight")
+require("config.keymaps")
+require("config.lazy")
+require("config.lsp")
+
+-- Автосохранение при потере фокуса
+vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
+  pattern = "*",
+  command = "silent! wa",
+})
+
+-- Автосохранение
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+  pattern = "*",
+  callback = function()
+    if vim.bo.modified and vim.bo.buftype == "" then
+      vim.cmd("silent! write")
+    end
+  end,
+})
+
