@@ -30,3 +30,6 @@ map("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
 map("n", "<C-j>", "<C-w>j", { desc = "Move to bottom split" })
 map("n", "<C-k>", "<C-w>k", { desc = "Move to top split" })
+
+-- Переключатель тем (themery)
+map("n", "<leader>th", ":Themery<CR>", { desc = "Theme switcher" })
