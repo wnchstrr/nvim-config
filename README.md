@@ -20,7 +20,8 @@
     │   └── lazy.lua          менеджер плагинов
     └── plugins/
         ├── ui.lua            lualine, bufferline, dashboard
-        ├── colorscheme.lua   тема (Tokyo Night)
+        ├── colorscheme.lua   темы + переключатель (themery)
+        ├── themery.lua       переключатель тем
         ├── editor.lua        neo-tree, telescope, treesitter, surround
         ├── lsp.lua           mason, pyright, nvim-cmp
         └── tools.lua         gitsigns, which-key, toggleterm, conform
@@ -34,7 +35,9 @@
 | Плагин | Назначение |
 |---|---|
 | `lazy.nvim` | Менеджер плагинов с ленивой загрузкой |
-| `tokyonight` | Тема |
+| `themery` | Переключатель тем на лету |
+| `bg.nvim` | Синхрон фона терминала с темой (прозрачность)|
+| Темы | poimandres, tokyonight, kanagawa, catppuccin, everforest, gruvbox |
 | `lualine` | Строка статуса |
 | `bufferline` | Вкладки файлов сверху |
 | `dashboard-nvim` | Стартовый экран |
@@ -78,10 +81,10 @@ git clone git@github.com:wnchstrr/nvim-config.git ~/.config/nvim
 ## Окружение
 
 - **ОС:** Ubuntu 26.04 LTS
-- **Терминал:** Kitty
+- **Терминал:** Ghostty
 - **Шрифт:** JetBrains Mono Nerd Font
 - **Shell:** zsh
-- **Тема:** Tokio Night
+- **Темы:** themery (переключатель)
 
 ---
 
